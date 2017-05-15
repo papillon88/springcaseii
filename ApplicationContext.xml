@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
         default-init-method="init" default-destroy-method="destroy">
 
-    <bean id="logger" class="com.papillon.dc.Logger" autowire="byName">
+    <bean id="logger" class="com.papillon.dc.Logger" autowire="constructor">
 
     </bean>
 
