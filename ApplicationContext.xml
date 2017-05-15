@@ -5,16 +5,16 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
         default-init-method="init" default-destroy-method="destroy">
 
-    <bean id="logger" class="com.papillon.dc.Logger" autowire="byType">
+    <bean id="logger" class="com.papillon.dc.Logger" autowire="byName">
 
     </bean>
 
-    <bean id="consolewriter" class="com.papillon.dc.ConsoleWriter">
+    <bean name="consoleWriter" class="com.papillon.dc.ConsoleWriter">
 
 
     </bean>
 
-    <bean id="filewriter" class="com.papillon.dc.FileWriter">
+    <bean id="fileWriter" class="com.papillon.dc.FileWriter">
 
 
     </bean>
