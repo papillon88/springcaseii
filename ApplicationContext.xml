@@ -21,7 +21,7 @@
 
     </bean>
 
-    <bean id="squirrel" class="com.papillon.dc.FileWriter">
+    <bean id="squirrel" class="com.papillon.dc.FileWriter" autowire-candidate="false">
 
 
     </bean>
