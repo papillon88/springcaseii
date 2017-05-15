@@ -3,9 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-        default-init-method="init" default-destroy-method="destroy">
+        default-init-method="init" default-destroy-method="destroy"
+       default-autowire="byType"
+        default-autowire-candidates="*Writer">
 
-    <bean id="logger" class="com.papillon.dc.Logger" autowire="constructor">
+    <bean id="logger" class="com.papillon.dc.Logger">
 
     </bean>
 
@@ -15,6 +17,11 @@
     </bean>
 
     <bean id="fileWriter" class="com.papillon.dc.FileWriter">
+
+
+    </bean>
+
+    <bean id="squirrel" class="com.papillon.dc.FileWriter">
 
 
     </bean>
