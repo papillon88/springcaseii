@@ -2,12 +2,18 @@ package com.papillon.dc;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+import sun.rmi.runtime.Log;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.annotation.Resource;
 import java.io.File;
 
 /**
  * Created by papillon on 5/15/2017.
  */
+@Component
 public class Logger {
 
     /*autowiring can be mixed and matched too.
@@ -30,6 +36,7 @@ public class Logger {
 
     //@Autowired(required = false)
     @Autowired
+    //@Resource
     public void setConsoleWriter(ConsoleWriter consoleWriter) {
         this.consoleWriter = consoleWriter;
     }
@@ -60,6 +67,16 @@ public class Logger {
 
     public void writeWater(String text) {
         waterWriter.write(text);
+    }
+
+    @PostConstruct
+    public void init(){
+        System.out.println("init");
+    }
+
+    @PreDestroy
+    public void destroy(){
+        System.out.println("destroy");
     }
 
 }
