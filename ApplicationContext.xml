@@ -11,12 +11,13 @@
 
 
     <bean id="logger" class="com.papillon.dc.Logger">
-
     </bean>
 
     <bean name="consoleWriter" class="com.papillon.dc.ConsoleWriter">
+    </bean>
 
-
+    <bean name="waterWriter" class="com.papillon.dc.WaterWriter">
+        <qualifier value="w_writer"></qualifier>
     </bean>
 
     <bean id="fileWriter" class="com.papillon.dc.FileWriter">

@@ -1,6 +1,7 @@
 package com.papillon.dc;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.io.File;
 
@@ -19,29 +20,46 @@ public class Logger {
     private ConsoleWriter consoleWriter;
     //@Autowired
     private FileWriter fileWriter;
+    private WaterWriter waterWriter;
 
     //@Autowired
-    public Logger(ConsoleWriter consoleWriter, FileWriter fileWriter) {
+    /*public Logger(ConsoleWriter consoleWriter, FileWriter fileWriter) {
         this.consoleWriter = consoleWriter;
         this.fileWriter = fileWriter;
-    }
+    }*/
 
+    //@Autowired(required = false)
     @Autowired
     public void setConsoleWriter(ConsoleWriter consoleWriter) {
         this.consoleWriter = consoleWriter;
     }
 
     @Autowired
+    @Qualifier(value = "f_writer")
     public void setFileWriter(FileWriter fileWriter) {
         this.fileWriter = fileWriter;
     }
 
+    @Autowired
+    @Qualifier(value = "w_writer")
+    public void setWaterWriter(WaterWriter waterWriter) {
+        this.waterWriter = waterWriter;
+    }
 
     public void writeFile(String text){
         fileWriter.write(text);
     }
 
     public void writeConsole(String text){
-        consoleWriter.write(text);
+        try {
+            consoleWriter.write(text);
+        } catch (Exception e){
+
+        }
     }
+
+    public void writeWater(String text) {
+        waterWriter.write(text);
+    }
+
 }

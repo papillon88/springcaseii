@@ -16,5 +16,6 @@ public class App {
         Logger logger = (Logger)context.getBean("logger");
         logger.writeConsole("hello debas");
         logger.writeFile("hello debas");
+        logger.writeWater("hello debas");
     }
 }
