@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 /**
  * Created by papillon on 5/15/2017.
  */
-@Component
+@Component("consoleWriter")
 public class ConsoleWriter implements LogWriter {
 
     @Override

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 /**
  * Created by papillon on 5/15/2017.
  */
-@Component
+@Component("waterWriter")
 @Qualifier(value = "w_writer")
 public class WaterWriter implements LogWriter{
     @Override

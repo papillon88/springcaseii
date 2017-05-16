@@ -13,7 +13,7 @@ import java.io.File;
 /**
  * Created by papillon on 5/15/2017.
  */
-@Component
+@Component("logger")
 public class Logger {
 
     /*autowiring can be mixed and matched too.

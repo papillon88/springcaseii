@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 /**
  * Created by papillon on 5/15/2017.
  */
-@Component
+@Component("fileWriter")
 @Qualifier(value = "f_writer")
 public class FileWriter implements LogWriter {
     @Override
